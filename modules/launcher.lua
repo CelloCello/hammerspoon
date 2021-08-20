@@ -8,7 +8,7 @@ local fnutils = require "hs.fnutils"
 grid.setMargins({0, 0})
 
 applist = {
-    {shortcut = 'I',appname = 'IntelliJ IDEA'},
+    {shortcut = 'L',appname = 'Sublime Text'},
     {shortcut = 'T',appname = 'Terminal'},
     {shortcut = 'Z',appname = 'Calculator'},
     {shortcut = 'D',appname = 'Finder'},

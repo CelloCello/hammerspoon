@@ -39,22 +39,22 @@ hotkey.bind(hyper, "Down", function()
 end)
 
 -- left top quarter
-hotkey.bind(hyperAlt, "Left", function()
+hotkey.bind(hyperAlt, "H", function()
   window.focusedWindow():moveToUnit'[0,0,50,50]'
 end)
 
 -- right bottom quarter
-hotkey.bind(hyperAlt, "Right", function()
+hotkey.bind(hyperAlt, "L", function()
   window.focusedWindow():moveToUnit'[50,50,100,100]'
 end)
 
 -- right top quarter
-hotkey.bind(hyperAlt, "Up", function()
+hotkey.bind(hyperAlt, "K", function()
   window.focusedWindow():moveToUnit'[50,0,100,50]'
 end)
 
 -- left bottom quarter
-hotkey.bind(hyperAlt, "Down", function()
+hotkey.bind(hyperAlt, "J", function()
   window.focusedWindow():moveToUnit'[0,50,50,100]'
 end)
 
@@ -66,6 +66,13 @@ end)
 -- center window
 hotkey.bind(hyper, 'C', function() 
   window.focusedWindow():centerOnScreen()
+end)
+
+-- center and resize window
+hotkey.bind(hyperCmd, 'C', function() 
+  local cwin = window.focusedWindow()
+  cwin:setSize({w=1200, h=1000})
+  cwin:centerOnScreen()
 end)
 
 -- maximize window
@@ -98,12 +105,12 @@ hotkey.bind(hyperShift, "H", function()
 end)
 
 -- move active window to previous monitor
-hotkey.bind(hyperShift, "Left", function()
+hotkey.bind(hyperAlt, "Left", function()
   window.focusedWindow():moveOneScreenWest()
 end)
 
 -- move active window to next monitor
-hotkey.bind(hyperShift, "Right", function()
+hotkey.bind(hyperAlt, "Right", function()
   window.focusedWindow():moveOneScreenEast()
 end)
 
@@ -117,6 +124,25 @@ hotkey.bind(hyperCtrl, "Left", function ()
   focusScreen(window.focusedWindow():screen():next())
 end)
 
+-- step move window right
+hotkey.bind(hyperWin, "Right", function ()
+  stepMove("right")
+end)
+
+-- step move window left
+hotkey.bind(hyperWin, "Left", function ()
+  stepMove("left")
+end)
+
+-- step move window up
+hotkey.bind(hyperWin, "Up", function ()
+  stepMove("up")
+end)
+
+-- step move window down
+hotkey.bind(hyperWin, "Down", function ()
+  stepMove("down")
+end)
 
 --Predicate that checks if a window belongs to a screen
 function isInScreen(screen, win)
@@ -149,6 +175,35 @@ moveto = function(win, n)
 
     layout.apply({{nil, win:title(), toWin, layout.maximized, nil, nil}})
     
+  end
+end
+
+--- WinWin:stepMove(direction)
+--- Method
+--- Move the focused window in the `direction` by on step. The step scale equals to the width/height of one gridpart.
+---
+--- Parameters:
+---  * direction - A string specifying the direction, valid strings are: `left`, `right`, `up`, `down`.
+function stepMove(direction)
+  local cwin = hs.window.focusedWindow()
+  local gridparts = 30
+  if cwin then
+      local cscreen = cwin:screen()
+      local cres = cscreen:fullFrame()
+      local stepw = cres.w/gridparts
+      local steph = cres.h/gridparts
+      local wtopleft = cwin:topLeft()
+      if direction == "left" then
+          cwin:setTopLeft({x=wtopleft.x-stepw, y=wtopleft.y})
+      elseif direction == "right" then
+          cwin:setTopLeft({x=wtopleft.x+stepw, y=wtopleft.y})
+      elseif direction == "up" then
+          cwin:setTopLeft({x=wtopleft.x, y=wtopleft.y-steph})
+      elseif direction == "down" then
+          cwin:setTopLeft({x=wtopleft.x, y=wtopleft.y+steph})
+      end
+  else
+      hs.alert.show("No focused window!")
   end
 end
 

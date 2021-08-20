@@ -35,10 +35,10 @@ https://github.com/greyby/hammerspoon
 
 #### 1/4 屏幕
 
-* <kbd>⌃</kbd><kbd>⌥</kbd><kbd>⇧</kbd> + <kbd>←</kbd> 将当前窗口移动到左上 1/4 屏
-* <kbd>⌃</kbd><kbd>⌥</kbd><kbd>⇧</kbd> + <kbd>→</kbd> 将当前窗口移动到右下 1/4 屏
-* <kbd>⌃</kbd><kbd>⌥</kbd><kbd>⇧</kbd> + <kbd>↑</kbd> 将当前窗口移动到右上 1/4 屏
-* <kbd>⌃</kbd><kbd>⌥</kbd><kbd>⇧</kbd> + <kbd>↓</kbd> 将当前窗口移动到左下 1/4 屏
+* <kbd>⌃</kbd><kbd>⌥</kbd><kbd>⇧</kbd> + <kbd>H</kbd> 将当前窗口移动到左上 1/4 屏
+* <kbd>⌃</kbd><kbd>⌥</kbd><kbd>⇧</kbd> + <kbd>L</kbd> 将当前窗口移动到右下 1/4 屏
+* <kbd>⌃</kbd><kbd>⌥</kbd><kbd>⇧</kbd> + <kbd>K</kbd> 将当前窗口移动到右上 1/4 屏
+* <kbd>⌃</kbd><kbd>⌥</kbd><kbd>⇧</kbd> + <kbd>J</kbd> 将当前窗口移动到左下 1/4 屏
 
 #### 多个显示器
 
@@ -49,27 +49,31 @@ https://github.com/greyby/hammerspoon
 
 ##### 移动窗口
 
-* <kbd>⇧</kbd><kbd>⌥</kbd> + <kbd>←</kbd> 将当前活动窗口移动到上一个显示器
-* <kbd>⇧</kbd><kbd>⌥</kbd> + <kbd>→</kbd> 将当前活动窗口移动到下一个显示器
+* <kbd>⌃</kbd><kbd>⇧</kbd><kbd>⌥</kbd> + <kbd>←</kbd> 将当前活动窗口移动到上一个显示器
+* <kbd>⌃</kbd><kbd>⇧</kbd><kbd>⌥</kbd> + <kbd>→</kbd> 将当前活动窗口移动到下一个显示器
 * <kbd>⇧</kbd><kbd>⌥</kbd> + <kbd>1</kbd> 将当前活动窗口移动到第一个显示器并窗口最大化
 * <kbd>⇧</kbd><kbd>⌥</kbd> + <kbd>2</kbd> 将当前活动窗口移动到第二个显示器并窗口最大化
-
+* <kbd>⌃</kbd><kbd>⌘</kbd> + <kbd>←</kbd> 將當前視窗往左移動一格
+* <kbd>⌃</kbd><kbd>⌘</kbd> + <kbd>→</kbd> 將當前視窗往右移動一格
+* <kbd>⌃</kbd><kbd>⌘</kbd> + <kbd>↑</kbd> 將當前視窗往上移動一格
+* <kbd>⌃</kbd><kbd>⌘</kbd> + <kbd>↓</kbd> 將當前視窗往下移動一格
 
 #### 其它
 
 * <kbd>⌃</kbd><kbd>⌥</kbd><kbd>⌘</kbd> + <kbd>F</kbd> 全屏
 * <kbd>⌃</kbd><kbd>⌥</kbd><kbd>⌘</kbd> + <kbd>M</kbd> 最大化窗口
 * <kbd>⌃</kbd><kbd>⌥</kbd><kbd>⌘</kbd> + <kbd>C</kbd> 将窗口放到中间
+* <kbd>⌥</kbd><kbd>⌘</kbd> + <kbd>C</kbd> 將視窗放到中間並調整大小
 * <kbd>⇧</kbd><kbd>⌥</kbd> + <kbd>H</kbd>  切换活动窗口
 * <kbd>⇧</kbd><kbd>⌥</kbd> + <kbd>/</kbd>  显示窗口切换的快捷键
 
 ### 系统工具
 
-* <kbd>⌃</kbd><kbd>⌥</kbd><kbd>⌘</kbd> + <kbd>L</kbd> 锁屏
+* <del><kbd>⌃</kbd><kbd>⌥</kbd><kbd>⌘</kbd> + <kbd>L</kbd> 锁屏</del>
 
 ### 快速启动
 
-* <kbd>⌃</kbd><kbd>⇧</kbd> + <kbd>I</kbd> `IntelliJ IDEA`
+* <kbd>⌃</kbd><kbd>⇧</kbd> + <kbd>L</kbd> `Sublime Text`
 * <kbd>⌃</kbd><kbd>⇧</kbd> + <kbd>T</kbd> `Terminal`
 * <kbd>⌃</kbd><kbd>⇧</kbd> + <kbd>Z</kbd> `Calculator`
 * <kbd>⌃</kbd><kbd>⇧</kbd> + <kbd>D</kbd> `Finder`
